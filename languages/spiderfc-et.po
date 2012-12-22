@@ -1,0 +1,248 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Spider FC\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-05 00:05+0400\n"
+"PO-Revision-Date: 2012-08-05 00:44+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Estonian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: C:\\wamp\\www\\wordpress\\wp-content\\plugins\\SpiderFC_1.4\n"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "January"
+msgstr "Jaanuar"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "February"
+msgstr "Veebruar"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "March"
+msgstr "Märts"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "April"
+msgstr "Aprill"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "May"
+msgstr "Maini"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "June"
+msgstr "Juuni"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "July"
+msgstr "Juuli"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "August"
+msgstr "August"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "September"
+msgstr "September"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "October"
+msgstr "Oktoober"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "November"
+msgstr "November"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:39
+msgid "December"
+msgstr "Detsember"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Jan"
+msgstr "Ja"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Feb"
+msgstr "Ve"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Mar"
+msgstr "Mär"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Apr"
+msgstr "Apr"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Jun"
+msgstr "Juun"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Jul"
+msgstr "Juul"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Aug"
+msgstr "Aug"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Sep"
+msgstr "Sep"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Oct"
+msgstr "Okt"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Nov"
+msgstr "Nov"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:40
+msgid "Dec"
+msgstr "Det"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:45
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:50
+msgid "Monday"
+msgstr "Esmaspäev"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:45
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:50
+msgid "Tuesday"
+msgstr "Teisipäev"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:45
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:50
+msgid "Wednesday"
+msgstr "Kolmapäev"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:45
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:50
+msgid "Thursday"
+msgstr "Neljapäev"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:45
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:50
+msgid "Friday"
+msgstr "Reede"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:45
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:50
+msgid "Saturday"
+msgstr "Laupäev"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:45
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:50
+msgid "Sunday"
+msgstr "Pühapäev"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:46
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:51
+msgid "Mon"
+msgstr "Es"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:46
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:51
+msgid "Tue"
+msgstr "Te"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:46
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:51
+msgid "Wed"
+msgstr "Ko"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:46
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:51
+msgid "Thu"
+msgstr "Ne"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:46
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:51
+msgid "Fri"
+msgstr "Re"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:46
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:51
+msgid "Sat"
+msgstr "La"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:46
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:51
+msgid "Sun"
+msgstr "Pü"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:55
+msgid "Event"
+msgstr "Event"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:56
+msgid "Events"
+msgstr "Sündmustest"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:57
+msgid "Priority"
+msgstr "Prioriteet"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:58
+msgid "No Priority"
+msgstr "Ei prioriteet"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:59
+msgid "Low Priority"
+msgstr "Madal prioriteet"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:60
+msgid "Medium Priority"
+msgstr "Medium prioriteet"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:61
+msgid "High Priority"
+msgstr "Prioriteediks"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:63
+msgid "Time"
+msgstr "Time"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:64
+msgid "From"
+msgstr "Pärit"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:65
+msgid "To"
+msgstr "Kuni"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:67
+msgid "Events On"
+msgstr "Üritusi"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/lang_xml.php:69
+msgid "Type"
+msgstr "Tüüp"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/spiderfc.php:455
+msgid "SpiderFC Manager"
+msgstr ""
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/spiderfc.php:610
+msgid "SpiderFC Events"
+msgstr ""
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/spiderfc.php:744
+msgid "SpiderFC Themes"
+msgstr ""
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/spiderfc_functions.php:163
+msgid "Spider FC Calendar - Add"
+msgstr ""
+
+#: C:\wamp\www\wordpress\wp-content\plugins\SpiderFC_1.4/spiderfc_functions.php:628
+msgid "Spider FC Parameters - Add"
+msgstr ""
+
