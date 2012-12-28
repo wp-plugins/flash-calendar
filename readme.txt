@@ -32,7 +32,7 @@ Spider Flash Calendar is one of the best WordPress event calendars available in 
 * Possibility to show or hide date events count.  
 * You can modify Spider Flash Calendar at start view mode (day, month, and year) and at start calendar size (large or small).  
 * Possibility to change width and height.  
-* Spider Flash Calendar also has possibility to change day’s names color, background color, font size and height.  
+* Spider Flash Calendar also has possibility to change day's names color, background color, font size and height.  
 * You can also change media scale type (inside, outside and stretch).  
 
 WordPress Flash Calendar creates as many events as you want for a day.You can also add images and videos to each event and make each event unique.  
@@ -117,9 +117,9 @@ Minimum requirements for installing the Spider Flash Calendar
 Perform a new installation for the calendar    
 *  Log in to the administrator panel for installing the calendar    
 *  Go to Plugins Add > New > Upload.    
-*  Click on “Choose file” (“Browse”) and select the Spider Flash Calendar zip file.    
-*  Click the “Upload&Install” button for uploading and installing the calendar.    
-*  Click the “Activate Plugin” button for activating the calendar plugin.    
+*  Click on "Choose file" ("Browse") and select the Spider Flash Calendar zip file.    
+*  Click the "Upload&Install" button for uploading and installing the calendar.    
+*  Click the "Activate Plugin" button for activating the calendar plugin.    
 If the installation of the calendar is successful, you will see a notification message. If any problem occurs during the installation of the calendar , please contact us info@web-dorado.com.     
 
 == Spider Flash Calendar Step by step guide Step 2 ==        
@@ -131,19 +131,19 @@ If the installation of the calendar is successful, you will see a notification m
 
 == Spider Flash Calendar Step by step guide Step 3 ==        
 = Managing Events =    
-3.1 On the left menu select  Spider FC>Spider FC calendars and click on the “Manage Events” link next to the calendar you want to create or edit events for. Next, click on the “Add an Event” button.    
+3.1 On the left menu select  Spider FC>Spider FC calendars and click on the "Manage Events" link next to the calendar you want to create or edit events for. Next, click on the "Add an Event" button.    
 3.2 Title. Add a title for the event.    
 3.5 Time. Set the start time and the end time of the calendar event.    
 3.6 Date. Set the start date and the end date of the calendar event.    
-3.7 Add items. For adding items (images, videos, or Youtube videos) to your  calendar event, click on the “Select” button.     
-*  From computer. If you click on the ‘Select files’ button, a window will pop up where you can browse for files on your computer. Alternatively, you can directly drag files to the “Drop files here” area.     
-*  From URL. This tab allows you to provide the URL of the item you want to add.  You will also need to choose the type of the file you want to add (‘Image’ or ‘Audio, Video, or Other File’) and type in a name for the item. The remaining fields are optional.    
-*  Media library. The “Media library” tab allows you to choose from the list of files that have already been uploaded to your library.    
+3.7 Add items. For adding items (images, videos, or Youtube videos) to your  calendar event, click on the "Select" button.     
+*  From computer. If you click on the 'Select files' button, a window will pop up where you can browse for files on your computer. Alternatively, you can directly drag files to the "Drop files here" area.     
+*  From URL. This tab allows you to provide the URL of the item you want to add.  You will also need to choose the type of the file you want to add ('Image' or 'Audio, Video, or Other File') and type in a name for the item. The remaining fields are optional.    
+*  Media library. The "Media library" tab allows you to choose from the list of files that have already been uploaded to your library.    
 *To find detailed information on how to use the WordPress Media Uploader, please follow this link: http://wpmu.org/mastering-the-media-uploader/*    
 3.8 Event type. Choose the type of the calendar event.    
 *  Text: Choose this option if you want to provide the calendar event with plain text.    
 *  HTML: Choose this option if you want to add HTML content to the  calendar event.    
-3.9 Type. Specify the type of the calendar event (e.g. ‘meeting’, ‘birthday’).    
+3.9 Type. Specify the type of the calendar event (e.g. 'meeting', 'birthday').    
 3.10 Priority. Choose the priority level of the calendar event. Each priority level has its corresponding color, which is applied to the event on the calendar and its cell (if there are multiple events on a given day, the cell takes up the color of the calendar event with the highest priority).    
 *  No Priority    
 *  Low    
@@ -153,22 +153,22 @@ If the installation of the calendar is successful, you will see a notification m
 
 == Spider Flash Calendar Step by step guide Step 4 ==    
 = Creating Themes for the Calendar =    
-4.1 On the left menu select Spider FC>Spider FC Themes>Add a Theme. Note that you can fill out all the parameters from scratch (‘Custom’ in the ‘Inherit from theme’ drop-down menu) or modify the parameters of one of the existing calendar themes (choose the calendar theme from the ‘Inherit from theme’ drop-down menu).     
-4.2 You can also use one of the existing calendar themes, with the possibility to modify them. You can find the list of the calendar  themes under Spider FC Themes. To apply the calendar theme, set it as ‘Default’. To view or edit the parameters of the calendar theme, simply click on the theme title or “Edit”. If you want to reset the parameters to their original values, there is a blue “Reset Theme” button on the bottom of the ‘Header Parameters’ section.    
+4.1 On the left menu select Spider FC>Spider FC Themes>Add a Theme. Note that you can fill out all the parameters from scratch ('Custom' in the 'Inherit from theme' drop-down menu) or modify the parameters of one of the existing calendar themes (choose the calendar theme from the 'Inherit from theme' drop-down menu).     
+4.2 You can also use one of the existing calendar themes, with the possibility to modify them. You can find the list of the calendar  themes under Spider FC Themes. To apply the calendar theme, set it as 'Default'. To view or edit the parameters of the calendar theme, simply click on the theme title or "Edit". If you want to reset the parameters to their original values, there is a blue "Reset Theme" button on the bottom of the 'Header Parameters' section.    
 General Parameters of the Spider Flash Calendar    
 4.3 Title. Add a title.    
 4.4 Start week with Monday. Choose whether to start the calendar week from Monday or from Sunday.     
 4.5 Date format. Define the format of the date (m=Month, d=Day, y=Year, and t=Time).    
 4.6 Date format short. Define the short format of the date for the calendar.    
 4.7 Time 12 Hours. Choose whether to use 12-hour time format or not.    
-4.8 Width in the large mode. It is possible to switch between the “large” and the “small” modes of the calendar in front end. This field allows defining the width of the calendar in the large mode.    
+4.8 Width in the large mode. It is possible to switch between the "large" and the "small" modes of the calendar in front end. This field allows defining the width of the calendar in the large mode.    
 4.9 Height in the large mode. Define the calendar height in the large mode.    
 4.10 Width in the small mode. Define the calendar width in the small mode.    
 4.11 Height in the small mode. Define the calendar height in the small mode.    
 4.12 Size mode at start. Choose which size mode the calendar starts with.    
 4.13 View mode at start. Choose which view mode the calendar starts with: days, months, years.    
 4.14 Main background color (gradient). Choose the main background color of the calendar by specifying the two extreme points of the linear color gradient.    
-4.15 Main border radius. This option is for making the corners of the calendar border round. Its value signifies the radius of the circle that fits in the corner of the border box. If you do not want to round the corners at all, you need to type in ‘0’.    
+4.15 Main border radius. This option is for making the corners of the calendar border round. Its value signifies the radius of the circle that fits in the corner of the border box. If you do not want to round the corners at all, you need to type in '0'.    
 4.16 Main border color. Choose the color of the main border of the calendar.    
 Header Parameters of the Calenadr    
 4.18 Header Height. Define the height of the calendar header.    
