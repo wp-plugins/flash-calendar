@@ -94,13 +94,14 @@ Vietnamese (vi)
 ####Thank you for your interest in [Spider Flash Calendar](http://web-dorado.com/products/wordpress-events-calendar.html).  
 
 Minimum requirements for installing the Spider Flash Calendar
-  -  Wordpress 3.0+
-  -  PHP 5.x
-  -  MySQL 5.x
-    Perform a new installation for the calendar
-*  Log in to the administrator panel for installing the calendar
-*  Go to Plugins Add > New > Upload.
-*  Click on “Choose file” (“Browse”) and select the Spider Flash Calendar zip file.
-*  Click the “Upload&Install” button for uploading and installing the calendar.
-*  Click the “Activate Plugin” button for activating the calendar plugin.
-If the installation of the calendar is successful, you will see a notification message. If any problem occurs during the installation of the calendar , please contact us info@web-dorado.com. 
+  -  Wordpress 3.0+  
+  -  PHP 5.x  
+  -  MySQL 5.x  
+  
+Perform a new installation for the calendar    
+*  Log in to the administrator panel for installing the calendar    
+*  Go to Plugins Add > New > Upload.    
+*  Click on “Choose file” (“Browse”) and select the Spider Flash Calendar zip file.    
+*  Click the “Upload&Install” button for uploading and installing the calendar.    
+*  Click the “Activate Plugin” button for activating the calendar plugin.    
+If the installation of the calendar is successful, you will see a notification message. If any problem occurs during the installation of the calendar , please contact us info@web-dorado.com.    
