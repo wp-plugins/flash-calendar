@@ -3,7 +3,7 @@
 Plugin Name: Spider Flash Calendar Free
 Plugin URI: http://web-dorado.com/products/wordpress-events-calendar.html
 Description: This product is a highly configurable Flash calendar plugin which allows you to have multiple organized events.
-Version: 1.0.2
+Version: 1.0.3
 Author: http://web-dorado.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
