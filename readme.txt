@@ -1,6 +1,6 @@
 === Spider Flash Calendar Free ===  
 Contributors: webdorado  
-Donate link: http://webdorado.org/products/wordpress-events-calendar.html  
+Donate link: http://web-dorado.com/products/wordpress-events-calendar.html  
 Tags: Calendar,event, event calendar, event manager, flash calendar, flash event calendar  
 Requires at least: 3.0  
 Tested up to: 3.5  
@@ -12,13 +12,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Spider Flash Calendar is a highly configurable Flash calendar plugin which allows you to have multiple organized events.  
 
 == Description ==    
-### [Spider Flash Calendar](http://webdorado.org/products/wordpress-events-calendar.html)  
+### [Spider Flash Calendar](http://web-dorado.com/products/wordpress-events-calendar.html)  
 
 
-[Demo](http://wpdemo.webdorado.org/spider-fc/)  
-[Demo Admin](http://wpdemo.webdorado.org/wp-admin/admin.php?page=SpiderFC)  
-[User Manual](http://webdorado.org/wordpress-flash-calendar-guide-step-1.html)  
-[Support Forum](http://webdorado.org/forum/spider-flash-calendar-wordpress.html)  
+[Demo](http://wpdemo.web-dorado.com/spider-fc/)  
+[Demo Admin](http://wpdemo.web-dorado.com/wp-admin/admin.php?page=SpiderFC)  
+[User Manual](http://web-dorado.com/wordpress-flash-calendar-guide-step-1.html)  
+[Support Forum](http://web-dorado.com/forum/spider-flash-calendar-wordpress.html)  
 
 
 Spider Flash Calendar is one of the best WordPress event calendars available in WordPress Plugins Directory. This product is a highly configurable Flash calendar plugin which allows you to have multiple organized events. The Spider Flash Calendar has many advantages like putting in an event media files: videos and pictures files. WordPress Flash Calendar is highly integrated with WordPress administration.  
@@ -91,7 +91,7 @@ Vietnamese (vi)
 
 == Installation ==
 
-####Thank you for your interest in [Spider Flash Calendar](http://webdorado.org/products/wordpress-events-calendar.html).  
+####Thank you for your interest in [Spider Flash Calendar](http://web-dorado.com/products/wordpress-events-calendar.html).  
 
 Minimum requirements for installing the Spider Flash Calendar
   -  Wordpress 3.0+  
@@ -106,7 +106,7 @@ Perform a new installation for the calendar
 *  Click the "Activate Plugin" button for activating the calendar plugin.    
 
 
-If the installation of the calendar is successful, you will see a notification message. If any problem occurs during the installation of the calendar , please contact us info@webdorado.org.    
+If the installation of the calendar is successful, you will see a notification message. If any problem occurs during the installation of the calendar , please contact us info@web-dorado.com.    
 
 == Spider Flash Calendar Step by step guide Step 1 ==    
 = Installing the Spider Flash Calendar =    
@@ -120,7 +120,7 @@ Perform a new installation for the calendar
 *  Click on "Choose file" ("Browse") and select the Spider Flash Calendar zip file.    
 *  Click the "Upload&Install" button for uploading and installing the calendar.    
 *  Click the "Activate Plugin" button for activating the calendar plugin.    
-If the installation of the calendar is successful, you will see a notification message. If any problem occurs during the installation of the calendar , please contact us info@webdorado.org.     
+If the installation of the calendar is successful, you will see a notification message. If any problem occurs during the installation of the calendar , please contact us info@web-dorado.com.     
 
 == Spider Flash Calendar Step by step guide Step 2 ==        
 = Creating a Calendar =    

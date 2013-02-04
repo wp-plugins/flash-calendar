@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Spider Flash Calendar Free
-Plugin URI: http://webdorado.org/products/wordpress-events-calendar.html
+Plugin URI: http://web-dorado.com/products/wordpress-events-calendar.html
 Description: This product is a highly configurable Flash calendar plugin which allows you to have multiple organized events.
 Version: 1.0.4
-Author: http://webdorado.org/
+Author: http://web-dorado.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
 
@@ -1074,8 +1074,8 @@ function confirmation(href,title) {
     </p>
     </td>
     <td style="text-align:right;font-size:16px;padding:20px; padding-right:50px">
-		<a href="http://webdorado.org/files/fromSpiderFC.php" target="_blank" style="color:red; text-decoration:none;">
-		<img src="<?php echo plugins_url( 'images/header.png' , __FILE__ ); ?>" border="0" alt="www.webdorado.org/files/fromSpiderFC.php" width="215"><br>
+		<a href="http://web-dorado.com/files/fromSpiderFC.php" target="_blank" style="color:red; text-decoration:none;">
+		<img src="<?php echo plugins_url( 'images/header.png' , __FILE__ ); ?>" border="0" alt="www.web-dorado.com/files/fromSpiderFC.php" width="215"><br>
 		Get the full version&nbsp;&nbsp;&nbsp;&nbsp;
 		</a>
 	</td>
@@ -1227,8 +1227,8 @@ if(!$row2->theme_default){
     </p>
     </td>
      <td style="text-align:right;font-size:16px;padding:20px; padding-right:50px">
-		<a href="http://webdorado.org/files/fromSpiderFC.php" target="_blank" style="color:red; text-decoration:none;">
-		<img src="<?php echo plugins_url( 'images/header.png' , __FILE__ ); ?>" border="0" alt="www.webdorado.org/files/fromSpiderFC.php" width="215"><br>
+		<a href="http://web-dorado.com/files/fromSpiderFC.php" target="_blank" style="color:red; text-decoration:none;">
+		<img src="<?php echo plugins_url( 'images/header.png' , __FILE__ ); ?>" border="0" alt="www.web-dorado.com/files/fromSpiderFC.php" width="215"><br>
 		Get the full version&nbsp;&nbsp;&nbsp;&nbsp;
 		</a>
 	</td>
@@ -1370,8 +1370,8 @@ if(!$row2->theme_default){
     </p>
     </td>
      <td style="text-align:right;font-size:16px;padding:20px; padding-right:50px">
-		<a href="http://webdorado.org/files/fromSpiderFC.php" target="_blank" style="color:red; text-decoration:none;">
-		<img src="<?php echo plugins_url('images/header.png' , __FILE__ ); ?>" border="0" alt="www.webdorado.org/files/fromSpiderFC.php" width="215"><br>
+		<a href="http://web-dorado.com/files/fromSpiderFC.php" target="_blank" style="color:red; text-decoration:none;">
+		<img src="<?php echo plugins_url('images/header.png' , __FILE__ ); ?>" border="0" alt="www.web-dorado.com/files/fromSpiderFC.php" width="215"><br>
 		Get the full version&nbsp;&nbsp;&nbsp;&nbsp;
 		</a>
 	</td>
