@@ -3,7 +3,7 @@
 Plugin Name: Spider Flash Calendar Free
 Plugin URI: http://web-dorado.com/products/wordpress-events-calendar.html
 Description: This product is a highly configurable Flash calendar plugin which allows you to have multiple organized events.
-Version: 1.0.5
+Version: 1.0.6
 Author: http://web-dorado.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -102,7 +102,7 @@ ob_start();
 			<param  name="flashvars" value="settingsUrl=<?php echo plugins_url( '' , __FILE__ ).'/theme_xml.php?spiderid='.$id;?>&eventsListUrl=<?php echo plugins_url( '' , __FILE__ ).'/calendar_xml.php?spiderid='.$id;?>&langUrl=<?php echo plugins_url( '' , __FILE__ ).'/lang_xml.php?spiderid='.$id;?>&swfUrl=<?php echo plugins_url( '' , __FILE__ );?>/calendar.swf">
            
                 
-				<!--[if !IE]>-->
+				<!--[if !IE]-->
 				<object type="application/x-shockwave-flash" data="<?php echo  plugins_url( '/' , __FILE__ );?>/loader.swf" width="<?php echo $width?>px" height="<?php echo $height ?>px" id="spiderfcswf">
 					<param name="movie" value="<?php echo plugins_url( '/' , __FILE__ );?>loader.swf" />
 					<param name="quality" value="high" />
@@ -120,7 +120,7 @@ ob_start();
 					<a href="http://www.adobe.com/go/getflash">
 						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
 					</a>
-				<!--[if !IE]>-->
+				<!--[if !IE]-->
 				</object>
 				<!--<![endif]-->
 			</object>
