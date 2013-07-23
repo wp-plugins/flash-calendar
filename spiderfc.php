@@ -3,13 +3,35 @@
 Plugin Name: Spider Flash Calendar Free
 Plugin URI: http://web-dorado.com/products/wordpress-events-calendar.html
 Description: This product is a highly configurable Flash calendar plugin which allows you to have multiple organized events.
-Version: 1.0.6
+Version: 1.0.7
 Author: http://web-dorado.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 /*LANGUAGE localization */
 //// load languages
+
+
+
+
+include_once 'ajax_functions.php';
+
+add_action('wp_ajax_spiderfcwindow', 'spider_flash_calendar_window'); ///export xml
+add_action('wp_ajax_calendar_xml_main', 'calendar_xml_main'); ///export csv
+add_action('wp_ajax_calendar_language_flash', 'calendar_language_flash'); /// generete captcha image and save it code in session
+add_action('wp_ajax_calendar_theme_flash', 'calendar_theme_flash'); /// openid window in post or page for editor
+
+add_action('wp_ajax_nopriv_calendar_xml_main', 'calendar_xml_main'); ///export xml
+add_action('wp_ajax_nopriv_calendar_language_flash', 'calendar_language_flash'); ///export csv
+add_action('wp_ajax_nopriv_calendar_theme_flash', 'calendar_theme_flash'); /// generete captcha image and save it code in session
+
+
+
+
+
+
+
+
 add_action( 'init', 'spiderfc_language_load' );
 function spiderfc_language_load() {
 	 load_plugin_textdomain('spiderfc', false, basename( dirname( __FILE__ ) ) . '/languages' );
@@ -99,7 +121,7 @@ ob_start();
 				<param name="devicefont" value="false" />
 				<param name="salign" value="" />
 				<param name="allowScriptAccess" value="sameDomain" />
-			<param  name="flashvars" value="settingsUrl=<?php echo plugins_url( '' , __FILE__ ).'/theme_xml.php?spiderid='.$id;?>&eventsListUrl=<?php echo plugins_url( '' , __FILE__ ).'/calendar_xml.php?spiderid='.$id;?>&langUrl=<?php echo plugins_url( '' , __FILE__ ).'/lang_xml.php?spiderid='.$id;?>&swfUrl=<?php echo plugins_url( '' , __FILE__ );?>/calendar.swf">
+			<param  name="flashvars" value="settingsUrl=<?php echo admin_url("admin-ajax.php").'?action=calendar_theme_flash@theme_xml.php@spiderid='.$id;?>&eventsListUrl=<?php echo admin_url("admin-ajax.php").'?action=calendar_xml_main@spiderid='.$id;?>&langUrl=<?php echo admin_url("admin-ajax.php").'?action=calendar_language_flash@spiderid='.$id;?>&swfUrl=<?php echo plugins_url( '' , __FILE__ );?>/calendar.swf">
            
                 
 				<!--[if !IE]-->
@@ -115,7 +137,7 @@ ob_start();
 					<param name="devicefont" value="false" />
 					<param name="salign" value="" />
 					<param name="allowScriptAccess" value="sameDomain" />
-					<param name="flashvars" id="spiderfcswf" value="settingsUrl=<?php echo plugins_url('' , __FILE__ ).'/theme_xml.php?spiderid='.$id;?>&eventsListUrl=<?php echo plugins_url('' , __FILE__ ).'/calendar_xml.php?spiderid='.$id;?>&langUrl=<?php echo plugins_url( '' , __FILE__ ).'/lang_xml.php?spiderid='.$id;?>&swfUrl=<?php echo plugins_url( '' , __FILE__ );?>/calendar.swf">
+					<param name="flashvars" id="spiderfcswf" value="settingsUrl=<?php echo admin_url("admin-ajax.php").'?action=calendar_theme_flash@spiderid='.$id;?>&eventsListUrl=<?php echo admin_url("admin-ajax.php").'?action=calendar_xml_main@spiderid='.$id;?>&langUrl=<?php echo admin_url("admin-ajax.php").'?action=calendar_language_flash@spiderid='.$id;?>&swfUrl=<?php echo plugins_url( '' , __FILE__ );?>/calendar.swf">
 				<!--<![endif]-->
 					<a href="http://www.adobe.com/go/getflash">
 						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
