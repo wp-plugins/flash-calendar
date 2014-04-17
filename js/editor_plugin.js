@@ -16,6 +16,7 @@
             ed.addButton('SpirderFC_mce', {
             title : 'Insert SpiderFC',
 			cmd : 'mceSpiderFC_mce',
+			image: wdfcplugin_url + '/images/CalendarIcon.png'
             });
         }
     });

@@ -23,7 +23,6 @@ require_once( WP_LOAD_PATH . 'wp-load.php')
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script language="javascript" type="text/javascript" src="<?php echo get_option("siteurl"); ?>/wp-includes/js/jquery/jquery.js"></script>
 	<script language="javascript" type="text/javascript" src="<?php echo get_option("siteurl"); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
-    <link rel="stylesheet" href="<?php echo get_option("siteurl"); ?>/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/dialog.css?ver=342-20110630100">
 	<script language="javascript" type="text/javascript" src="<?php echo get_option("siteurl"); ?>/wp-includes/js/tinymce/utils/mctabs.js"></script>
 	<script language="javascript" type="text/javascript" src="<?php echo get_option("siteurl"); ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
 	<base target="_self">
@@ -81,8 +80,7 @@ function insert_spiderfc() {
 	{
 	   var tagtext;
 	   tagtext='[spiderfc id="'+document.getElementById('spiderfcname').value+'"]';
-	   window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, tagtext);
-	   tinyMCEPopup.editor.execCommand('mceRepaint');
+	   window.tinyMCE.execCommand('mceInsertContent', false, tagtext);
 	   tinyMCEPopup.close();		
 	}
 	
