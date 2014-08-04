@@ -39,7 +39,7 @@ WordPress Flash Calendar creates as many events as you want for a day.You can al
   
 ### Supported languages  
   
- *If you need language which is not included in this list, please contact us and we will do the translation within 3 days. If you find some mistakes in the translation, please contact us and we will correct it within 3 days.*  
+ *If you need language which is not included in this list, please contact us and we will do the translation within 3 days. If you find any mistakes in the translation, please contact us and we will make relevant corrections within 3 days.*  
   
 Afrikaans (af)  
 Albanian (sq)  
