@@ -3,7 +3,7 @@ Contributors: webdorado
 Donate link: http://web-dorado.com/products/wordpress-events-calendar.html  
 Tags: Calendar,event, event calendar, event manager, flash calendar, flash event calendar  
 Requires at least: 3.0  
-Tested up to: 3.9  
+Tested up to: 4.0  
 Stable tag: trunk  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -11,10 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Spider Flash Calendar is a highly configurable Flash calendar plugin which allows you to have multiple organized events.  
 
-== Description ==    
-### [Spider Flash Calendar](http://web-dorado.com/products/wordpress-events-calendar.html)  
-
-
+== Description ==  
+[Spider Flash Calendar](http://web-dorado.com/products/wordpress-events-calendar.html)  
+ 
 [Demo](http://wpdemo.web-dorado.com/spider-fc/)  
 [Demo Admin](http://wpdemo.web-dorado.com/wp-admin/admin.php?page=SpiderFC)  
 [User Manual](http://web-dorado.com/wordpress-flash-calendar-guide-step-1.html)  
