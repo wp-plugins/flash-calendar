@@ -54,7 +54,7 @@ class SpiderFCTheme{
 				$params->paramsname == "datesBgColors" 			|| $params->paramsname == "eventsListHeaderbgColors" || 
 				$params->paramsname == "eventContentBgColors" 	 )		
 			{
-				$grad = explode(";", $params->paramsvalue);
+				$grad = explode(" ", $params->paramsvalue);
 				$this->properties[$i]->value->value1 = $grad[0];
 				$this->properties[$i]->value->value2 = $grad[1];
 			}	else{
@@ -180,7 +180,8 @@ class SpiderFCTheme{
 	}
 	
 	public function addProperty($title, $name, $desc, $value, $default, $themeid) {
-		$property = new Parameter($this->getID);
+		//$property = new Parameter($this->getID);
+		$property = new Parameter();
 		$property->title = $title;
 		$property->themeDefault = $default;	
 		$property->name = $name;								

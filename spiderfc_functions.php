@@ -50,87 +50,87 @@ function edit_spiderfc($id)
 {
 	$objtheme = new SpiderFCTheme(-1); 
 	
-	$title = $_POST['SpiderFC_themeTitle'];
-	$themeDefault = 0;//$_POST['SpiderFC_themeDefault'];	
+	$title = esc_sql(esc_html(stripslashes($_POST['SpiderFC_themeTitle'])));
+	$themeDefault = 0;//$_POST['SpiderFC_themeDefault'])));	
 	
-	$objtheme->addProperty($title,'startWithMonday','', $_POST['SpiderFC_Width_in_monday'],$themeDefault,$id);
-	$objtheme->addProperty($title,'dateFormat','', $_POST['SpiderFC_dateFormat'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'dateFormatShort','', $_POST['SpiderFC_dateFormatShort'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'time','', $_POST['SpiderFC_time'],$themeDefault,$id);
+	$objtheme->addProperty($title,'startWithMonday','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_Width_in_monday']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'dateFormat','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_dateFormat']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'dateFormatShort','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_dateFormatShort']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'time','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_time']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'appMaxWidth','', $_POST['SpiderFC_appmaxWidth'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'appMaxHeight', '', $_POST['SpiderFC_appmaxHeight'],$themeDefault,$id);
-	$objtheme->addProperty($title,'appMinWidth','', $_POST['SpiderFC_appminWidth'],$themeDefault,$id);
-	$objtheme->addProperty($title,'appMinHeight','', $_POST['SpiderFC_appminHeight'],$themeDefault,$id);
+	$objtheme->addProperty($title,'appMaxWidth','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_appmaxWidth']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'appMaxHeight', '', esc_sql(esc_html(stripslashes($_POST['SpiderFC_appmaxHeight']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'appMinWidth','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_appminWidth']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'appMinHeight','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_appminHeight']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'startViewSize', '',$_POST['SpiderFC_startViewSize'],$themeDefault,$id);
-	$objtheme->addProperty($title,'startViewState','', $_POST['SpiderFC_startViewState'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'bgColors', '', $_POST['SpiderFC_bgColors1']. " " . $_POST['SpiderFC_bgColors2'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'bgCornerRadius','', $_POST['SpiderFC_bgCornerRadius'],$themeDefault,$id);
-	$objtheme->addProperty($title,'strokeColor','', $_POST['SpiderFC_strokeColor'],$themeDefault,$id);
+	$objtheme->addProperty($title,'startViewSize', '',esc_sql(esc_html(stripslashes($_POST['SpiderFC_startViewSize']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'startViewState','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_startViewState']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'bgColors', '', esc_sql(esc_html(stripslashes($_POST['SpiderFC_bgColors1']))). " " . esc_sql(esc_html(stripslashes($_POST['SpiderFC_bgColors2']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'bgCornerRadius','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_bgCornerRadius']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'strokeColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_strokeColor']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'headerHeight','', $_POST['SpiderFC_headerHeight'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'headerPadding','', $_POST['SpiderFC_headerPadding'],$themeDefault,$id);
-	$objtheme->addProperty($title,'headerBgColors','',$_POST['SpiderFC_headerBgColors1']." ".$_POST['SpiderFC_headerBgColors2'],$themeDefault,$id);
-	$objtheme->addProperty($title,'headerBgStrokeColor','', $_POST['SpiderFC_headerBgStrokeColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'headerContentColor', '',$_POST['SpiderFC_headerContentColor'],$themeDefault,$id);
-//	$objtheme->addProperty($title,'headerContentHoverColor','', $_POST['SpiderFC_headerContentHoverColor'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'headerContentStrokeColor','', $_POST['SpiderFC_headerContentStrokeColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'headerFontSize','', $_POST['SpiderFC_headerFontSize'],$themeDefault,$id);
+	$objtheme->addProperty($title,'headerHeight','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerHeight']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'headerPadding','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerPadding']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'headerBgColors','',esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerBgColors1'])))." ".esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerBgColors2']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'headerBgStrokeColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerBgStrokeColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'headerContentColor', '',esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerContentColor']))),$themeDefault,$id);
+//	$objtheme->addProperty($title,'headerContentHoverColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerContentHoverColor']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'headerContentStrokeColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerContentStrokeColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'headerFontSize','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_headerFontSize']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'daysNamesColor','', $_POST['SpiderFC_daysNamesColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'daysNamesFontSize','', $_POST['SpiderFC_daysNamesFontSize'],$themeDefault,$id);
-//	$objtheme->addProperty($title,'daysNamesHeight','', $_POST['SpiderFC_daysNamesHeight'],$themeDefault,$id);
+	$objtheme->addProperty($title,'daysNamesColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_daysNamesColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'daysNamesFontSize','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_daysNamesFontSize']))),$themeDefault,$id);
+//	$objtheme->addProperty($title,'daysNamesHeight','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_daysNamesHeight']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'datesBgColors','', $_POST['SpiderFC_datesBgColors1']." ".$_POST['SpiderFC_datesBgColors2'],$themeDefault,$id);
-//	$objtheme->addProperty($title,'datesBgStrokeColor','', $_POST['SpiderFC_datesBgStrokeColor'],$themeDefault,$id);
+	$objtheme->addProperty($title,'datesBgColors','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_datesBgColors1'])))." ".esc_sql(esc_html(stripslashes($_POST['SpiderFC_datesBgColors2']))),$themeDefault,$id);
+//	$objtheme->addProperty($title,'datesBgStrokeColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_datesBgStrokeColor']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'priority0Color','', $_POST['SpiderFC_priority0Color'],$themeDefault,$id);
-	$objtheme->addProperty($title,'priority1Color','', $_POST['SpiderFC_priority1Color'],$themeDefault,$id);
-	$objtheme->addProperty($title,'priority2Color','', $_POST['SpiderFC_priority2Color'],$themeDefault,$id);
-	$objtheme->addProperty($title,'priority3Color','', $_POST['SpiderFC_priority3Color'],$themeDefault,$id);
-	$objtheme->addProperty($title,'dateFontSize','', $_POST['SpiderFC_dateFontSize'],$themeDefault,$id);
-	$objtheme->addProperty($title,'dateColor','', $_POST['SpiderFC_dateColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'dateStrokeColor','', $_POST['SpiderFC_dateStrokeColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'showDateEventsCount','', $_POST['SpiderFC_showDateEventsCount'],$themeDefault,$id);
-	$objtheme->addProperty($title,'dateEventsCountFontSize','', $_POST['SpiderFC_dateEventsCountFontSize'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'dateEventsCountColor','', $_POST['SpiderFC_dateEventsCountColor'],$themeDefault,$id);
+	$objtheme->addProperty($title,'priority0Color','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_priority0Color']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'priority1Color','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_priority1Color']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'priority2Color','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_priority2Color']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'priority3Color','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_priority3Color']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'dateFontSize','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_dateFontSize']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'dateColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_dateColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'dateStrokeColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_dateStrokeColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'showDateEventsCount','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_showDateEventsCount']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'dateEventsCountFontSize','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_dateEventsCountFontSize']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'dateEventsCountColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_dateEventsCountColor']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'eventsListHeaderHeight','', $_POST['SpiderFC_eventsListHeaderHeight'],$themeDefault,$id);
-//	$objtheme->addProperty($title,'eventsListHeaderStrokeColor','', $_POST['SpiderFC_eventsListHeaderStrokeColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'eventsListHeaderbgColors','', $_POST['SpiderFC_eventsListHeaderbgColors1']." ".$_POST['SpiderFC_eventsListHeaderbgColors2'],$themeDefault,$id);
-	$objtheme->addProperty($title,'eventsListHeaderColor','', $_POST['SpiderFC_eventsListHeaderColor'],$themeDefault,$id);
-//	$objtheme->addProperty($title,'eventsListHeaderHoverColor','', $_POST['SpiderFC_eventsListHeaderHoverColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'eventsListHeaderFontSize','', $_POST['SpiderFC_eventsListHeaderFontSize'],$themeDefault,$id);
+	$objtheme->addProperty($title,'eventsListHeaderHeight','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventsListHeaderHeight']))),$themeDefault,$id);
+//	$objtheme->addProperty($title,'eventsListHeaderStrokeColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventsListHeaderStrokeColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'eventsListHeaderbgColors','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventsListHeaderbgColors1'])))." ".esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventsListHeaderbgColors2']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'eventsListHeaderColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventsListHeaderColor']))),$themeDefault,$id);
+//	$objtheme->addProperty($title,'eventsListHeaderHoverColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventsListHeaderHoverColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'eventsListHeaderFontSize','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventsListHeaderFontSize']))),$themeDefault,$id);
 
-	$objtheme->addProperty($title,'eventHeaderHeight','', $_POST['SpiderFC_eventHeaderHeight'],$themeDefault,$id);
-	$objtheme->addProperty($title,'eventHeaderFontSize','', $_POST['SpiderFC_eventHeaderFontSize'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'eventHeaderColor','', $_POST['SpiderFC_eventHeaderColor'],$themeDefault,$id);
+	$objtheme->addProperty($title,'eventHeaderHeight','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventHeaderHeight']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'eventHeaderFontSize','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventHeaderFontSize']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'eventHeaderColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventHeaderColor']))),$themeDefault,$id);
 	
-//	$objtheme->addProperty($title,'eventHeaderHoverColor','', $_POST['SpiderFC_eventHeaderHoverColor'],$themeDefault,$id);
+//	$objtheme->addProperty($title,'eventHeaderHoverColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventHeaderHoverColor']))),$themeDefault,$id);
 
-	$objtheme->addProperty($title,'eventContentBgColors','', $_POST['SpiderFC_eventContentBgColors1']." ".$_POST['SpiderFC_eventContentBgColors2'],$themeDefault,$id);
-	$objtheme->addProperty($title,'eventContentDatesFontSize','', $_POST['SpiderFC_eventContentDatesFontSize'],$themeDefault,$id);
-	$objtheme->addProperty($title,'eventContentDatesColor','', $_POST['SpiderFC_eventContentDatesColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'eventContentDescriptionFontSize','', $_POST['SpiderFC_eventContentDescriptionFontSize'],$themeDefault,$id);
-	$objtheme->addProperty($title,'eventContentDescriptionColor','', $_POST['SpiderFC_eventContentDescriptionColor'],$themeDefault,$id);
+	$objtheme->addProperty($title,'eventContentBgColors','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventContentBgColors1'])))." ".esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventContentBgColors2']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'eventContentDatesFontSize','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventContentDatesFontSize']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'eventContentDatesColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventContentDatesColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'eventContentDescriptionFontSize','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventContentDescriptionFontSize']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'eventContentDescriptionColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventContentDescriptionColor']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'footerHeight','', $_POST['SpiderFC_footerHeight'],$themeDefault,$id);
-	$objtheme->addProperty($title,'footerColor','', $_POST['SpiderFC_footerColor'],$themeDefault,$id);
-//	$objtheme->addProperty($title,'footerHoverColor','', $_POST['SpiderFC_footerHoverColor'],$themeDefault,$id);
+	$objtheme->addProperty($title,'footerHeight','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_footerHeight']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'footerColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_footerColor']))),$themeDefault,$id);
+//	$objtheme->addProperty($title,'footerHoverColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_footerHoverColor']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'mediaDefaultAutoplay','', $_POST['SpiderFC_mediaDefaultAutoplay'],$themeDefault,$id);
-	$objtheme->addProperty($title,'mediaScaleType','', $_POST['SpiderFC_mediaScaleType'],$themeDefault,$id);	
-	$objtheme->addProperty($title,'mediaShowDuration','', $_POST['SpiderFC_mediaShowDuration'],$themeDefault,$id);
-	$objtheme->addProperty($title,'videoDefaultVolume','', $_POST['SpiderFC_videoDefaultVolume'],$themeDefault,$id);
+	$objtheme->addProperty($title,'mediaDefaultAutoplay','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaDefaultAutoplay']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'mediaScaleType','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaScaleType']))),$themeDefault,$id);	
+	$objtheme->addProperty($title,'mediaShowDuration','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaShowDuration']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'videoDefaultVolume','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_videoDefaultVolume']))),$themeDefault,$id);
 	
-	$objtheme->addProperty($title,'videoAutoplay','', $_POST['SpiderFC_videoAutoplay'],$themeDefault,$id);
-	$objtheme->addProperty($title,'mediaBgColor','',$_POST['SpiderFC_mediaBgColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'mediaCtrlsBgColor','', $_POST['SpiderFC_mediaCtrlsBgColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'mediaCtrlsBgAlpha','', $_POST['SpiderFC_mediaCtrlsBgAlpha'],$themeDefault,$id);
-	$objtheme->addProperty($title,'mediaCtrlsColor','', $_POST['SpiderFC_mediaCtrlsColor'],$themeDefault,$id);	
-//	$objtheme->addProperty($title,'mediaCtrlsHoverColor','', $_POST['SpiderFC_mediaCtrlsHoverColor'],$themeDefault,$id);
-	$objtheme->addProperty($title,'mediaCtrlsAlpha','', $_POST['SpiderFC_mediaCtrlsAlpha'],$themeDefault,$id);
+	$objtheme->addProperty($title,'videoAutoplay','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_videoAutoplay']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'mediaBgColor','',esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaBgColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'mediaCtrlsBgColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaCtrlsBgColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'mediaCtrlsBgAlpha','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaCtrlsBgAlpha']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'mediaCtrlsColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaCtrlsColor']))),$themeDefault,$id);	
+//	$objtheme->addProperty($title,'mediaCtrlsHoverColor','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaCtrlsHoverColor']))),$themeDefault,$id);
+	$objtheme->addProperty($title,'mediaCtrlsAlpha','', esc_sql(esc_html(stripslashes($_POST['SpiderFC_mediaCtrlsAlpha']))),$themeDefault,$id);
 
 
 
@@ -147,9 +147,9 @@ function save_calendars($id){
 	include_once('include/spiderfcCalendar.php');
 	$obj = new SpideFCCalendar($id);
 	
-	$obj->title =  $_POST['SpiderFC_Calendar'];
-	$obj->theme =  $_POST['SpiderFC_caltheme'];
-	$obj->published =  $_POST['SpiderFC_published'];
+	$obj->title =  isset($_POST['SpiderFC_Calendar']) ? esc_sql(esc_html(stripslashes($_POST['SpiderFC_Calendar']))) : '';
+	$obj->theme =  isset($_POST['SpiderFC_caltheme']) ? esc_sql(esc_html(stripslashes($_POST['SpiderFC_caltheme']))) : '';
+	$obj->published =  isset($_POST['SpiderFC_published']) ? esc_sql(esc_html(stripslashes($_POST['SpiderFC_published']))) : '';
 	$obj->ChangeToDB($id);
 }
 
@@ -213,6 +213,7 @@ function edit_Calendars($id){
         <input type="button" onclick="if(document.getElementById('title_for_spider_fc').value==''){document.getElementById('fc_hidden1').value='<?php echo $i ?>';document.getElementById('title_Required_Field').style.visibility='visible'; document.getElementById('title_Required_Field').style.height='30px';} else {document.getElementById('parametrs_for_local_fc').action='admin.php?page=SpiderFC&task=apply&id=<?php echo $id;?>'; document.getElementById('parametrs_for_local_fc').submit()}" value="<?php _e('Apply') ?>" /> 
         <input type="button" name="cancel" value="Cancel" onclick="window.location.href='admin.php?page=SpiderFC<?php if($id!=-1) echo "&task=SpiderFC&id=".$id.""?>'" />
         </p>
+		<?php wp_nonce_field('nonce_sp_fc', 'nonce_sp_fc'); ?>
     </form>
 	
 	<?php
@@ -315,33 +316,33 @@ function Change_CalendarsEvents($id, &$idevent = -1){
 			
 			
 			$eventsobj->id_calendar = $id;
-			$eventsobj->calendar = $_POST['SpiderFC_EventTitle'];
-			$eventsobj->date_begin = $_POST['SpiderFC_date1'];
-			$eventsobj->date_end = $_POST['SpiderFC_date2'];
-			if($_POST['SpiderFC_time1']=="" && $_POST['SpiderFC_minut1']=="") 
+			$eventsobj->calendar = esc_sql(esc_html(stripslashes($_POST['SpiderFC_EventTitle'])));
+			$eventsobj->date_begin = esc_sql(esc_html(stripslashes($_POST['SpiderFC_date1'])));
+			$eventsobj->date_end = esc_sql(esc_html(stripslashes($_POST['SpiderFC_date2'])));
+			if($_POST['SpiderFC_time1'] == "" && $_POST['SpiderFC_minut1']=="") 
 			$eventsobj->event_time_begin='';
 			else
-			$eventsobj->event_time_begin = $_POST['SpiderFC_time1'].":".$_POST['SpiderFC_minut1'];
+			$eventsobj->event_time_begin = esc_sql(esc_html(stripslashes($_POST['SpiderFC_time1']))).":".esc_sql(esc_html(stripslashes($_POST['SpiderFC_minut1'])));
 			if($_POST['SpiderFC_time2']=="" && $_POST['SpiderFC_minut2']=="")
 			$eventsobj->event_time_end='';
 			else
-			$eventsobj->event_time_end = $_POST['SpiderFC_time2'].":".$_POST['SpiderFC_minut2'];
-			$eventsobj->title = $_POST['SpiderFC_EventTitle'];
+			$eventsobj->event_time_end = esc_sql(esc_html(stripslashes($_POST['SpiderFC_time2']))).":".esc_sql(esc_html(stripslashes($_POST['SpiderFC_minut2'])));
+			$eventsobj->title = esc_sql(esc_html(stripslashes($_POST['SpiderFC_EventTitle'])));
 			if( $_POST['SpiderFC_eventtype'] == "text")
-				$eventsobj->text = $_POST['texthtml'];
+				$eventsobj->text = esc_sql(esc_html(stripslashes($_POST['texthtml'])));
 			else
-				$eventsobj->html = $_POST['content'];
+				$eventsobj->html = stripslashes($_POST['content']);
 				
-			$eventsobj->css = $_POST['Spiderfc_eventcss'];			
-			$eventsobj->htmlUrl = $_POST['SpiderFC_htmlurl'];
+			$eventsobj->css = esc_sql(esc_html(stripslashes($_POST['Spiderfc_eventcss'])));			
+			$eventsobj->htmlUrl = esc_sql(esc_html(stripslashes($_POST['SpiderFC_htmlurl'])));
 					
 		
-			$eventsobj->type = $_POST['SpiderFC_type'];
-			$eventsobj->priority = $_POST['SpiderFC_priority'];
+			$eventsobj->type = esc_sql(esc_html(stripslashes($_POST['SpiderFC_type'])));
+			$eventsobj->priority = esc_sql(esc_html(stripslashes($_POST['SpiderFC_priority'])));
 			
-			$eventsobj->event_type =  $_POST['SpiderFC_eventtype'];
+			$eventsobj->event_type =  esc_sql(esc_html(stripslashes($_POST['SpiderFC_eventtype'])));
 			
-			if(is_array($_POST['post_image'])){
+			if(isset($_POST['post_image']) && is_array($_POST['post_image'])){
 				foreach($_POST['post_image'] as $rows){
 					
 					$linktype = checkType($rows);
@@ -351,7 +352,7 @@ function Change_CalendarsEvents($id, &$idevent = -1){
 			}
 			
 			
-			$eventsobj->published = $_POST['SpiderFC_published']; 
+			$eventsobj->published = esc_sql(esc_html(stripslashes($_POST['SpiderFC_published']))); 
 			
 		
 			$eventsobj->ChangeToDB($idevent);
@@ -366,10 +367,25 @@ function Change_CalendarsEvents($id, &$idevent = -1){
 function edit_CalendarsEvents($id, $idevent = -1){
 
 	global $wpdb;
-	$events = array();
+	$events = new stdClass();
 	if($idevent != -1)
 		$events = $wpdb->get_row("SELECT * FROM ".$wpdb->prefix."spiderfc_events WHERE id='".$idevent."'");
-		
+	else {
+		$events->title = '';
+		$events->event_time_begin = '';
+		$events->event_time_end = '';
+		$events->date_begin = '';
+		$events->date_end = '';
+		$events->items = '';
+		$events->event_type  = 'text';
+		$events->htmlUrl = '';
+		$events->published = 1;
+		$events->type = '';
+		$events->text = '';
+		$events->priority = 0;
+		$events->html = '';
+		$events->css = '';
+	}
 	?>
 	 <div style="visibility:hidden; height:0px" id="title_Required_Field" class="updated"><p><strong><?php _e('"Title" Required Field' ); ?></strong></p></div>
 
@@ -494,7 +510,7 @@ function edit_CalendarsEvents($id, $idevent = -1){
 	   ?>
        <textarea id="html" name="texthtml" cols="35" rows="6" style="width:100%; height:250px;" class="mce_editable"> <?php echo $events->text;?></textarea>
     <div  id="poststuff" style="width: 600px;" >
-<div id="<?php echo user_can_richedit() ? 'postdivrich' : 'postdiv'; ?>" class="postarea" ><?php the_editor( $events->html);  ?>
+<div id="<?php echo user_can_richedit() ? 'postdivrich' : 'postdiv'; ?>" class="postarea" ><?php wp_editor($events->html,"content","title");  ?>
 </div>
 </div>
     </td></tr>    
@@ -609,11 +625,9 @@ function edit_CalendarsEvents($id, $idevent = -1){
 
         <input type="button" onclick="window.location.href='admin.php?page=SpiderFC&task=events&id=<?php echo $id;?>'" value="Cancel" />
         </p>
-        </form>
-       
-		
+		<?php wp_nonce_field('nonce_sp_fc', 'nonce_sp_fc'); ?>
+        </form>		
     <?php
-
 } 
 
 function edit_Theme($id)
@@ -650,6 +664,16 @@ function edit_Theme($id)
 		?>  
         
       <div id="themeparams">
+	  	<div class="clear"></div>
+    	
+        
+        <p class="submit"><?php $i ="apply";?>
+		<input type="hidden" id="fc_hidden" name="send" value="save" />
+        <input type="hidden" name="fsnd" value="save" />		
+        <input type="button" name="Submit" value="<?php _e('Save') ?>" onclick="if(document.getElementById('title').value==''){document.getElementById('title_Required_Field').style.visibility='visible'; document.getElementById('title_Required_Field').style.height='30px';} else {document.getElementById('parametrs_for_local_fc').submit() }"/> 
+		<input type="button" onclick="if(document.getElementById('title').value==''){document.getElementById('fc_hidden').value='<?php echo $i ?>';document.getElementById('title_Required_Field').style.visibility='visible'; document.getElementById('title_Required_Field').style.height='30px';} else {document.getElementById('parametrs_for_local_fc').action='admin.php?page=spfcthemes&task=apply&id=<?php echo $id;?>'; document.getElementById('parametrs_for_local_fc').submit()}" value="<?php _e('Apply') ?>" />
+        <input type="button" name="cancel" value="Cancel" onclick="window.location.href='admin.php?page=spfcthemes'" /><?php //if($id!=-1) echo "&task=edit&id=".$id.""?>	
+        </p>
        <div class="divfieldset">
        <?php if($id==-1) { ?>
        
@@ -802,7 +826,7 @@ foreach($theme_id1 as $choosen_theme)
                    <tr><th style="min-width:100px"><?php _e("Main background color(gradient)"); $bgcl = explode(" ", $array['bgColors']);?></th>
                    <td>                 
                    <input  type="text" id="bgColors1" name="SpiderFC_bgColors1" value="<?php echo $bgcl[0];?>" size="5"  class="color"/> &nbsp;
-                   <input  type="text" id="bgColors2" name="SpiderFC_bgColors2" value="<?php echo $bgcl[1];?>" size="5"  class="color" /></td>
+                   <input  type="text" id="bgColors2" name="SpiderFC_bgColors2" value="<?php if(count($bgcl) == 2) echo $bgcl[1];?>" size="5"  class="color" /></td>
                    </tr>
                    
                    <tr><th style="min-width:100px"><?php _e("Main border radius"); ?></th>
@@ -826,7 +850,7 @@ foreach($theme_id1 as $choosen_theme)
                    <tr><th style="min-width:100px"><?php _e("Header background color (gradient)"); $hdcol = explode(" ", $array['headerBgColors']);?></th>
                    <td>                 
                    <input  type="text" id="headerBgColors1" name="SpiderFC_headerBgColors1" value="<?php echo $hdcol[0];?>" size="5"  class="color" /> &nbsp;
-                   <input  type="text" id="headerBgColors2" name="SpiderFC_headerBgColors2" value="<?php echo $hdcol[1];?>" size="5" class="color" /></td>
+                   <input  type="text" id="headerBgColors2" name="SpiderFC_headerBgColors2" value="<?php  if(count($hdcol) == 2) echo $hdcol[1];?>" size="5" class="color" /></td>
                    </tr>
                    
                    <tr><th style="min-width:100px"><?php _e("Header border color"); ?></th>
@@ -868,7 +892,7 @@ foreach($theme_id1 as $choosen_theme)
                    
                    <tr><th style="min-width:100px"><?php _e("Days background color (gradient)"); $dayscl = explode(" ", $array['datesBgColors']);?></th>
                    <td><input  type="text" id="datesBgColors1" name="SpiderFC_datesBgColors1" value="<?php echo $dayscl[0];?>" size="5" class="color"/>  &nbsp;
-                   <input  type="text" id="datesBgColors2" name="SpiderFC_datesBgColors2" value="<?php echo $dayscl[1];?>" size="5" class="color" /> </td>
+                   <input  type="text" id="datesBgColors2" name="SpiderFC_datesBgColors2" value="<?php if(count($dayscl) == 2) echo $dayscl[1];?>" size="5" class="color" /> </td>
                    </tr>
 				   
                    <tr><th style="min-width:100px"><?php _e("Background color of a cell with event with no priority"); ?></th>
@@ -918,7 +942,7 @@ foreach($theme_id1 as $choosen_theme)
 				   
                    <tr><th style="min-width:100px"><?php _e("Events list header background color (gradient)"); $evtcl = explode(" ", $array['eventsListHeaderbgColors']);?></th>
                    <td><input  type="text" id="eventsListHeaderbgColors1" name="SpiderFC_eventsListHeaderbgColors1" value="<?php echo $evtcl[0];?>" size="5" class="color" />  &nbsp;
-                   <input  type="text" id="eventsListHeaderbgColors2" name="SpiderFC_eventsListHeaderbgColors2" value="<?php echo $evtcl[1];?>" size="5"  class="color"/></td>
+                   <input  type="text" id="eventsListHeaderbgColors2" name="SpiderFC_eventsListHeaderbgColors2" value="<?php if(count($evtcl) == 2) echo $evtcl[1];?>" size="5"  class="color"/></td>
                    </tr>
 				   
                    <tr><th style="min-width:100px"><?php _e("Events list header content color"); ?></th>
@@ -943,7 +967,7 @@ foreach($theme_id1 as $choosen_theme)
 				   
                    <tr><th style="min-width:100px"><?php _e("Event content background color (gradient)"); $evtconbg = explode(" ", $array['eventContentBgColors']);?></th>
                    <td><input  type="text" id="eventContentBgColors1" name="SpiderFC_eventContentBgColors1" value="<?php echo $evtconbg[0];?>" size="5"  class="color"/> &nbsp;
-                   <input  type="text" id="eventContentBgColors2" name="SpiderFC_eventContentBgColors2" value="<?php echo $evtconbg[1];?>" size="5"  class="color"/></td>
+                   <input  type="text" id="eventContentBgColors2" name="SpiderFC_eventContentBgColors2" value="<?php if(count($evtconbg) == 2) echo $evtconbg[1];?>" size="5"  class="color"/></td>
                    </tr>
 				   
                    <tr><th style="min-width:100px"><?php _e("Event content dates font size"); ?></th>
@@ -1027,18 +1051,8 @@ foreach($theme_id1 as $choosen_theme)
                     </td>                             </tr>	
                     
                     </table>					  
-                    </fieldset></div></div>	    
-	<div class="clear"></div>
-    	
-        
-        <p class="submit"><?php $i ="apply";?>
-		<input type="hidden" id="fc_hidden" name="send" value="save" />
-        <input type="hidden" name="fsnd" value="save" />		
-        <input type="button" name="Submit" value="<?php _e('Save') ?>" onclick="if(document.getElementById('title').value==''){document.getElementById('title_Required_Field').style.visibility='visible'; document.getElementById('title_Required_Field').style.height='30px';} else {document.getElementById('parametrs_for_local_fc').submit() }"/> 
-		<input type="button" onclick="if(document.getElementById('title').value==''){document.getElementById('fc_hidden').value='<?php echo $i ?>';document.getElementById('title_Required_Field').style.visibility='visible'; document.getElementById('title_Required_Field').style.height='30px';} else {document.getElementById('parametrs_for_local_fc').action='admin.php?page=spfcthemes&task=apply&id=<?php echo $id;?>'; document.getElementById('parametrs_for_local_fc').submit()}" value="<?php _e('Apply') ?>" />
-        <input type="button" name="cancel" value="Cancel" onclick="window.location.href='admin.php?page=spfcthemes'" /><?php //if($id!=-1) echo "&task=edit&id=".$id.""?>	
-        </p>
-        
+                    </fieldset></div></div>	
+    <?php wp_nonce_field('nonce_sp_fc', 'nonce_sp_fc'); ?>					       
 	</form>
    
 	

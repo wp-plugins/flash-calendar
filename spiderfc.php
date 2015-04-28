@@ -3,7 +3,7 @@
 Plugin Name: Spider Flash Calendar Free
 Plugin URI: http://web-dorado.com/products/wordpress-events-calendar.html
 Description: This product is a highly configurable Flash calendar plugin which allows you to have multiple organized events.
-Version: 1.0.8
+Version: 1.0.9
 Author: http://web-dorado.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -976,10 +976,10 @@ function Manage_Spider(){
   wp_enqueue_script('media-upload');
   wp_admin_css('thickbox');
   wp_print_scripts('media-upload'); 
-  wp_print_scripts('editor-functions');
+  //wp_print_scripts('editor-functions');
   do_action('admin_print_styles');
   wp_enqueue_script("jquery");
-  wp_tiny_mce();
+  //wp_tiny_mce();
 /*Remove Upload/Insert button from WP editor*/
  remove_action( 'media_buttons', 'media_buttons' );
 	include 'spiderfc_functions.php';
@@ -995,10 +995,11 @@ function Manage_Spider(){
 			$pagebool = true;
 			SpiderFC_events($newid);				
 		}else if('save' == $_REQUEST['task']){
+			check_admin_referer('nonce_sp_fc', 'nonce_sp_fc');
 			save_calendars($newid);
-			
 		}
 		else if('apply' == $_REQUEST['task']){
+			check_admin_referer('nonce_sp_fc', 'nonce_sp_fc');
 			save_calendars($newid);
 			if($newid=='-1')
 			{
@@ -1012,38 +1013,28 @@ function Manage_Spider(){
 			
 		}
 		else if('delete' == $_REQUEST['task']){	
+			$nonce_sp_fc = $_REQUEST['_wpnonce'];
+			if (! wp_verify_nonce($nonce_sp_fc, 'nonce_sp_fc') )
+			  die("Are you sure you want to do this?");
 			delete_spiderfc($newid);
 		}
 		
 		
 	}
 
-	
-
-	
-	
-	
-	///edit spiderfc
 	if($pagebool == false )
 	{
 	?>
     <form action="admin.php?page=SpiderFC" id="table_edit_events" method="post">
-    <script type="text/javascript">
+    <?php $nonce_sp_fc = wp_create_nonce('nonce_sp_fc'); ?>
+	<script type="text/javascript">
 	 function ordering(x,y)
 	 {
 		document.getElementById('asc_or_desc_by').value=x;
 		document.getElementById('asc_or_desc').value=y;
 		document.getElementById('table_edit_events').submit();
  	}
-</script>
-
-<?php 
-$row2=$wpdb->get_results("SELECT title, theme_id, theme_default FROM  ".$wpdb->prefix."spiderfc_theme GROUP BY theme_id ORDER BY title ".$asc_desc); 
-if(!$row2->theme_default){
-?>
-
-<script>
-function confirmation(href,title) {
+    function confirmation(href,title) {
 		var answer = confirm("Are you sure you want to delete '"+title+"'?")
 		if (answer){
 			document.getElementById('table_edit_events').action=href;
@@ -1053,8 +1044,6 @@ function confirmation(href,title) {
 	}
 	</script>
  <?php
-}
-
     if(isset($_POST['asc_or_desc_by']))
 	{
 		$sql_order='';
@@ -1073,11 +1062,18 @@ function confirmation(href,title) {
 				$sort_title=1;
 			}
 		}
+		else
+		{
+			$style_class_title="manage-column column-title sortable desc";
+			$sort_title=1;
+			$sql_order='';
+		} 
     }
 	else
 	{
 		$style_class_title="manage-column column-title sortable desc";
 		$sort_title=1;
+		$sql_order='';
 	} 
 	?>
     <table border="0" style="width:100%; table-layout:fixed">
@@ -1087,8 +1083,8 @@ function confirmation(href,title) {
     </td>
     <td>       
     <p class="submit">
-    <input type="hidden" id="asc_or_desc_by" name="asc_or_desc_by" value="<?php echo $_POST['asc_or_desc_by']; ?>"/>
-  	<input type="hidden" id="asc_or_desc" name="asc_or_desc" value="<?php echo $_POST['asc_or_desc']; ?>"/>
+    <input type="hidden" id="asc_or_desc_by" name="asc_or_desc_by" value="<?php echo isset($_POST['asc_or_desc_by']) ? esc_js(esc_html(stripslashes($_POST['asc_or_desc_by']))) : ''; ?>"/>
+  	<input type="hidden" id="asc_or_desc" name="asc_or_desc" value="<?php echo isset($_POST['asc_or_desc']) ? esc_js(esc_html(stripslashes($_POST['asc_or_desc']))) : ''; ?>"/>
     <input type="button" value="Add a Calendar" onclick="window.location.href='admin.php?page=SpiderFC&task=edit&id=-1'" />
     </p>
     </td>
@@ -1132,13 +1128,14 @@ function confirmation(href,title) {
       <td><?php if($row[$i]->published==1) {echo 'Yes';} else {echo 'No';}  ?> </td>
       <td><a href="admin.php?page=SpiderFC&task=events&id=<?php echo $row[$i]->id;?>" >Manage Events</a> </td>
       <td><a href="admin.php?page=SpiderFC&task=edit&id=<?php echo $row[$i]->id; ?>">Edit</a> </td>
-      <td><a href="javascript:confirmation('admin.php?page=SpiderFC&task=delete&id=<?php echo $row[$i]->id; ?>','<?php if($row[$i]->title!="") echo addslashes($row[$i]->title); else echo "(No Title)" ?>')">Delete</a> </td>
+      <td><a href="javascript:confirmation('admin.php?page=SpiderFC&task=delete&id=<?php echo $row[$i]->id; ?>&_wpnonce=<?php echo $nonce_sp_fc; ?>','<?php if($row[$i]->title!="") echo addslashes($row[$i]->title); else echo "(No Title)" ?>')">Delete</a> </td>
  </tr>
  <?php
     }
 	?>
  </tbody>
  </table>
+ <?php wp_nonce_field('nonce_sp_fc', 'nonce_sp_fc'); ?>
  </form>
  <?php
 	}
@@ -1149,59 +1146,51 @@ function SpiderFC_events($id){ //$id -is calendar id
 	$pagebool = false;
 	if(!empty($_REQUEST['id']))
 	{	$newid = (int)$_REQUEST['id'];
-		$idevent = (int)$_REQUEST['idevent'];
+		$idevent =  isset($_REQUEST['idevent']) ? (int) $_REQUEST['idevent']: 0;
 	}
-	if( 'edit' == $_REQUEST['action']){
+	if(isset($_REQUEST['action']) && 'edit' == $_REQUEST['action']){
 			$pagebool = true;
-			if('save' == $_POST['snd']){
-				if( 'save' ==  $_POST['send']){
+			if(isset($_REQUEST['snd']) && 'save' == $_POST['snd']){
+				if(isset($_REQUEST['send']) && 'save' ==  $_POST['send']){
+				    check_admin_referer('nonce_sp_fc', 'nonce_sp_fc');
 					$pagebool = false;
 				}
 				Change_CalendarsEvents($newid, $idevent);	
 			}							
 			if($pagebool != false)
 				edit_CalendarsEvents($newid, $idevent); // function declaration edit_CalendarsEvents($newid, &$idevent); 
-	}else if( 'delete' == $_REQUEST['action']){			
-		if($idevent != -1){	delete_events($idevent);} /*Delete events*/
+	}else if(isset($_REQUEST['action']) && 'delete' == $_REQUEST['action']){			
+		if($idevent != -1){
+		$nonce_sp_fc = $_REQUEST['_wpnonce'];
+		if (! wp_verify_nonce($nonce_sp_fc, 'nonce_sp_fc') )
+		  die("Are you sure you want to do this?");
+		delete_events($idevent);} /*Delete events*/
 	}
 	if($pagebool == false){
 ?>	
 	 <form action="admin.php?page=SpiderFC&task=events&id=<?php echo $id;?>" id="table_edit_events" method="post">
-    <script type="text/javascript">
+     <?php $nonce_sp_fc = wp_create_nonce('nonce_sp_fc'); ?>
+	 <script type="text/javascript">
 	 function ordering(x,y)
 	 {
 		document.getElementById('asc_or_desc_by').value=x;
 		document.getElementById('asc_or_desc').value=y;
 		document.getElementById('table_edit_events').submit();
  	}
-
- 	</script>
-
-<?php 
-$row2=$wpdb->get_results("SELECT title, theme_id, theme_default FROM  ".$wpdb->prefix."spiderfc_theme GROUP BY theme_id ORDER BY title ".$asc_desc); 
-if(!$row2->theme_default){
-?>
-
-<script>
  	function confirmation(href,title) {
 		if(title!='No Title'){
-		var answer = confirm("Are you sure you want to delete '"+title+"'?")
-		if (answer){
-			document.getElementById('table_edit_events').action=href;
-			document.getElementById('table_edit_events').submit();
+			var answer = confirm("Are you sure you want to delete '"+title+"'?")
+			if (answer){
+				document.getElementById('table_edit_events').action=href;
+				document.getElementById('table_edit_events').submit();
+			}
+			else{
+			}
 		}
-		else{
-		}
-	}
-	else alert("You can't delete default theme!");
-	
+		else alert("You can't delete default theme!");	
 	}
 	</script>
- <?php
-}
-    
-    ?>
-     <?php
+    <?php
     if(isset($_POST['asc_or_desc_by']))
 	{
 		$sql_order='';
@@ -1222,7 +1211,7 @@ if(!$row2->theme_default){
 		}
     }
 	else
-	{
+	{   $sql_order = "";
 		$style_class_title="manage-column column-title sortable desc";
 		$sort_title=1;
 	}
@@ -1240,8 +1229,8 @@ if(!$row2->theme_default){
     </td>
     <td>       
     <p class="submit">
-      <input type="hidden" id="asc_or_desc_by" name="asc_or_desc_by" value="<?php echo $_POST['asc_or_desc_by']; ?>"/>
-  	 <input type="hidden" id="asc_or_desc" name="asc_or_desc" value="<?php echo $_POST['asc_or_desc']; ?>"/>
+      <input type="hidden" id="asc_or_desc_by" name="asc_or_desc_by" value="<?php echo isset($_POST['asc_or_desc_by']) ? esc_js(esc_html(stripslashes($_POST['asc_or_desc_by']))) : ''; ?>"/>
+  	 <input type="hidden" id="asc_or_desc" name="asc_or_desc" value="<?php echo isset($_POST['asc_or_desc']) ? esc_js(esc_html(stripslashes($_POST['asc_or_desc']))) : ''; ?>"/>
     <input type="button" value="Add an Event" onclick="window.location.href='admin.php?page=SpiderFC&task=events&action=edit&id=<?php echo $id;?>&idevent=-1'" /> <!--edit_Theme(-1)-->
     </p>
     </td>
@@ -1278,19 +1267,21 @@ if(!$row2->theme_default){
         <td><?php if($event->event_time_begin=='' ) {echo $event->event_time_end; } else if($event->event_time_end=="") {echo  $event->event_time_begin;} else {echo $event->event_time_begin.'-'.$event->event_time_end;} ?></td> 
         <td><?php if($event->published == 0){ echo "No";} else {echo "Yes";} ?></td>
         <td><a href="admin.php?page=SpiderFC&task=events&action=edit&id=<?php echo $id?>&idevent=<?php echo $event->id?>">Edit</a></td>
-        <td><a href="admin.php?page=SpiderFC&task=events&action=delete&id=<?php echo $id?>&idevent=<?php echo $event->id?>">Delete</a></td>
+        <td><a href="admin.php?page=SpiderFC&task=events&action=delete&id=<?php echo $id?>&idevent=<?php echo $event->id?>&_wpnonce=<?php echo $nonce_sp_fc; ?>">Delete</a></td>
         </tr><?php	
 	}
  ?>
  </tbody>
  </table>
+ <?php wp_nonce_field('nonce_sp_fc', 'nonce_sp_fc'); ?>
+ </form>
  <?php
 	}
 }
 /*Calendar themes */
 function SpiderFC_params(){
 	global $wpdb;
-	if($_GET["task"] == 'default') {
+	if(isset($_GET["task"]) && $_GET["task"] == 'default') {
 	 $query1  = $wpdb->query("UPDATE ".$wpdb->prefix."spiderfc_theme SET theme_default='0'");
 	 $query2  = $wpdb->query("UPDATE ".$wpdb->prefix."spiderfc_theme SET theme_default='1' WHERE theme_id = '".$_GET["id"]."' ");
  }
@@ -1299,16 +1290,21 @@ function SpiderFC_params(){
 	//task=edit
 	if(!empty($_REQUEST['id']))
 		$newid = (int) $_REQUEST['id'];
+	if(isset($_REQUEST['task'])) {
 	if('edit' == $_REQUEST['task']){
 			edit_Theme($newid);
 			$pagebool = true;	
 	}else if('delete' == $_REQUEST['task']){
+				$nonce_sp_fc = $_REQUEST['_wpnonce'];
+				if (! wp_verify_nonce($nonce_sp_fc, 'nonce_sp_fc') )
+				  die("Are you sure you want to do this?");
 				delete_themes($newid);
 	}else if('save' == $_REQUEST['task']){
+			check_admin_referer('nonce_sp_fc', 'nonce_sp_fc');
 			edit_spiderfc($newid);
 	}
 	else if('apply' == $_REQUEST['task'])
-	{
+	{       check_admin_referer('nonce_sp_fc', 'nonce_sp_fc');
 			edit_spiderfc($newid);
 			
 			if($newid=='-1')
@@ -1323,25 +1319,18 @@ function SpiderFC_params(){
 			$pagebool = true;	
 	}
 	
-	
+	}
 	if($pagebool == false){
 	?>
-     <form action="<?php echo admin_url('admin.php?page=spfcthemes'); ?>" id="table_edit_events" method="post">
-    <script type="text/javascript">
+    <form action="<?php echo admin_url('admin.php?page=spfcthemes'); ?>" id="table_edit_events"  method="post">
+    <?php $nonce_sp_fc = wp_create_nonce('nonce_sp_fc'); ?>
+	<script type="text/javascript">
 	function ordering(x,y)
 	 {
 		document.getElementById('order_by_1').value=x;
 		document.getElementById('asc_or_desc_1').value=y;
 		document.getElementById('table_edit_events').submit();
  	}
-</script>
-
-<?php 
-$row2=$wpdb->get_results("SELECT title, theme_id, theme_default FROM  ".$wpdb->prefix."spiderfc_theme GROUP BY theme_id ORDER BY title ".$asc_desc); 
-if(!$row2->theme_default){
-?>
-
-<script>
  	function confirmation(href,title) {
 		if(title!='No Title'){
 		var answer = confirm("Are you sure you want to delete '"+title+"'?")
@@ -1355,35 +1344,33 @@ if(!$row2->theme_default){
 	else alert("You can't delete default theme!");
 	}
 	</script>
- <?php
-}
-    
-    ?>
-
     <table width="100%" style="table-layout:fixed">
     <tr>
     <td style="width:190px">
     <?php    
-		echo "<h2>" . __( 'SpiderFC Themes' ) . "</h2>"; 
-		if(isset($_POST['order_by_1'])){
-		$sort["sortid_by"]=$_POST['order_by_1'];
-		if($_POST['asc_or_desc_1']==1)
-		{
-		 $asc_desc = 'ASC';
-		 $sort["custom_style"]="manage-column column-title sorted asc";
-		 $sort["1_or_2"]=2;
+	echo "<h2>" . __( 'SpiderFC Themes' ) . "</h2>"; 
+	$asc_desc = 'ASC';
+	$sort["sortid_by"] = '';
+	$sort["default_style"] = '';
+	if(isset($_POST['order_by_1'])) {
+		$sort["sortid_by"]=esc_js(esc_html(stripslashes($_POST['order_by_1'])));
+		if($_POST['asc_or_desc_1']==1) {
+			 $asc_desc = 'ASC';
+			 $sort["custom_style"]="manage-column column-title sorted asc";
+			 $sort["1_or_2"]=2;
 		}
-			else{ $asc_desc = 'DESC';	
+		else{ 
+		    $asc_desc = 'DESC';	
 			$sort["custom_style"]="manage-column column-title sorted desc";
 			$sort["1_or_2"]=1;
-			}
+		}
 	}	
 	?>
     </td>
     <td>       
     <p class="submit">
-      <input type="hidden" id="asc_or_desc_1" name="asc_or_desc_1" value="<?php echo $_POST['asc_or_desc_by']; ?>"/>
-    <input type="hidden" name="order_by_1" id="order_by_1" value="<?php echo $_POST['order_by'] ?>" >
+    <input type="hidden" id="asc_or_desc_1" name="asc_or_desc_1" value="<?php echo isset($_POST['asc_or_desc_by']) ? esc_js(esc_html(stripslashes($_POST['asc_or_desc_by']))) : ''; ?>"/>
+    <input type="hidden" name="order_by_1" id="order_by_1" value="<?php echo isset($_POST['order_by']) ? esc_js(esc_html(stripslashes($_POST['asc_or_desc_by']))) : ''; ?>" >
   
     <input type="button" value="Add a Theme" onclick="window.location.href='admin.php?page=spfcthemes&task=edit&id=-1'" /> <!--edit_Theme(-1)-->
     </p>
@@ -1416,7 +1403,7 @@ if(!$row2->theme_default){
 		}
 ?>
  <input type="hidden" name="post_name" style="width:153px; font-size:11px;" onchange="submit_form_postid(this)">    
-	<table class="wp-list-table widefat plugins" style="width:95%"">
+	<table class="wp-list-table widefat plugins" style="width:95%">
          <thead>
              <TR>
                  <th  width="50" scope="col" id="id" class="<?php if($sort["sortid_by"]=="theme_id") echo $sort["custom_style"]; else echo $sort["default_style"]; ?>" style="" >
@@ -1445,13 +1432,14 @@ if(!$row2->theme_default){
                     <td><a  href="admin.php?page=spfcthemes&task=edit&id=<?php echo $row[$i]->theme_id; ?>"><?php echo $row[$i]->title?></a></td>
                     <td><a <?php if(!$row[$i]->theme_default) echo 'style="color:#C00"';  ?>  href="admin.php?page=spfcthemes&task=default&id=<?php echo $row[$i]->theme_id?>"><?php if($row[$i]->theme_default) echo "Default"; else echo "Not Default";?></a></td>
                     <td><a  href="admin.php?page=spfcthemes&task=edit&id=<?php echo $row[$i]->theme_id; ?>">Edit</a> </td>
-                    <td><a href="javascript:confirmation('admin.php?page=spfcthemes&task=delete&id=<?php echo $row[$i]->theme_id; ?>',
+                    <td><a href="javascript:confirmation('admin.php?page=spfcthemes&task=delete&id=<?php echo $row[$i]->theme_id; ?>&_wpnonce=<?php echo $nonce_sp_fc; ?>',
                  '<?php if(!$row[$i]->theme_default) echo addslashes($row[$i]->title); else echo "No Title" ?>')">Delete</a> </td></tr>
                    <?php 
 			 }
  ?>
  </tbody>
  </table>
+ <?php wp_nonce_field('nonce_sp_fc', 'nonce_sp_fc'); ?>
  </form>
 	<?php
 	}

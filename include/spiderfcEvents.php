@@ -39,7 +39,7 @@ class SpiderFCEvents{
 												LEFT JOIN ".$this->wpdb->prefix."spiderfc_calendar 
 												ON  ".$this->wpdb->prefix."spiderfc_events.id_calendar=".$this->wpdb->prefix."spiderfc_calendar.id 
 												WHERE ".$this->wpdb->prefix."spiderfc_events.id='".$this->id."' ORDER BY id ");
-			$this->SetResult($result);
+			//$this->SetResult($result);
 		}
 	
 	}
